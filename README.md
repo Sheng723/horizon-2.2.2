@@ -1,11 +1,15 @@
 This repo refers to this changes: https://github.com/laravel/horizon/pull/223 to support base path configuration in laravel horizon.
 
-For further changes, can copy the compiled css js and [blade file ( if any )] to the working laravel project
+Setup this project by run npm install if want to make changes.
 
-copy from this project public/css to vendor/laravel/horizon/public/css
+Run npm run prod to compile css and js after make changes.
 
-copy from this project public/js to vendor/laravel/horizon/public/js 
+copy from this project public/css to your vendor/laravel/horizon/public/css
 
-Run npm run prod to compile css and js
+copy from this project public/js to your vendor/laravel/horizon/public/js 
 
-Setup this project by run npm install
+copy from this project resources/views/app.blade.php to your vendor/laravel/horizon/resources/views/app.blade.php
+
+run php artisan horizon:assets in your own project
+
+add this variable: 'base_path' => '' to config/horizon.php
