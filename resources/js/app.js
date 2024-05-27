@@ -18,7 +18,9 @@ $('body')
         $('a[data-toggle="tooltip"]').tooltip('hide');
     });
 
-Vue.prototype.$http = axios.create();
+Vue.prototype.$http = axios.create({
+    baseURL: window.basePath
+});
 
 window.Bus = new Vue({name: 'Bus'});
 
@@ -29,6 +31,9 @@ Vue.config.errorHandler = function (err, vm, info) {
 };
 
 Vue.mixin({
+    created: function() {
+        this.$root.basePath = window.basePath;
+    },
     methods: {
         /**
          * Format the given date with respect to timezone.
